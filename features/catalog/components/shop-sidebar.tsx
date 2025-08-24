@@ -131,7 +131,11 @@ export function ShopSidebar({ filters, onFiltersChange }: ShopSidebarProps) {
           <div className="space-y-4">
             {topRatedProducts.map((product) => (
               <div key={product.id} className="flex items-center space-x-3 hover:bg-emerald-50 p-2 rounded cursor-pointer transition-colors"
-                onClick={() => window.location.href = `/product/${product.id}`}>
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.location.href = `/product/${product.id}`
+                  }
+                }}>
                 <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center overflow-hidden">
                   <img
                     src={`/placeholder.svg?height=300&width=300&text=${encodeURIComponent(product.name)}`}

@@ -1,9 +1,29 @@
-import { Suspense } from "react"
+"use client"
+
+import { Suspense, useState } from "react"
 import { ShopSidebar } from "@/features/catalog/components/shop-sidebar"
 import { ProductGrid } from "@/features/catalog/components/product-grid"
 import { Breadcrumb } from "@/features/shared/components/breadcrumb"
 
+interface FilterState {
+  categories: string[]
+  priceRange: [number, number]
+  colors: string[]
+  sizes: string[]
+  tags: string[]
+  searchQuery: string
+}
+
 export default function ShopPage() {
+  const [filters, setFilters] = useState<FilterState>({
+    categories: [],
+    priceRange: [0, 500],
+    colors: [],
+    sizes: [],
+    tags: [],
+    searchQuery: "",
+  })
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -24,13 +44,13 @@ export default function ShopPage() {
         <div className="flex gap-8">
           {/* Sidebar */}
           <div className="w-1/4">
-            <ShopSidebar />
+            <ShopSidebar filters={filters} onFiltersChange={setFilters} />
           </div>
 
           {/* Product Grid */}
           <div className="w-3/4">
             <Suspense fallback={<div>Cargando productos...</div>}>
-              <ProductGrid />
+              <ProductGrid filters={filters} />
             </Suspense>
           </div>
         </div>

@@ -106,7 +106,11 @@ export function QuoteSuccess({ quote, onNewQuote, onBackToShop }: QuoteSuccessPr
               <Button onClick={onNewQuote} variant="outline" className="flex-1 bg-transparent">
                 Nueva Cotización
               </Button>
-              <Button onClick={() => (window.location.href = "/catalog")} className="flex-1">
+              <Button onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.location.href = "/catalog"
+                }
+              }} className="flex-1">
                 Volver a Comprar
               </Button>
             </div>

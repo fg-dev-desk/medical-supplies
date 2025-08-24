@@ -21,7 +21,11 @@ export function TopRatedSidebar() {
               <div 
                 key={product.id} 
                 className="flex items-center space-x-3 hover:bg-emerald-50 p-2 rounded cursor-pointer transition-colors"
-                onClick={() => window.location.href = `/product/${product.id}`}
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.location.href = `/product/${product.id}`
+                  }
+                }}
               >
                 <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center overflow-hidden">
                   <img 
@@ -60,7 +64,11 @@ export function TopRatedSidebar() {
               className="w-full h-full object-cover"
             />
           </div>
-          <p className="text-xs text-emerald-500 font-medium cursor-pointer hover:text-emerald-600" onClick={() => window.location.href = '/catalog'}>Comprar Ahora</p>
+          <p className="text-xs text-emerald-500 font-medium cursor-pointer hover:text-emerald-600" onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.location.href = '/catalog'
+            }
+          }}>Comprar Ahora</p>
         </CardContent>
       </Card>
     </div>

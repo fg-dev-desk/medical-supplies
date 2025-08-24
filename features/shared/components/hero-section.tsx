@@ -21,7 +21,11 @@ export function HeroSection() {
               <p className="text-gray-600 mb-6 text-lg">Desde $89.99</p>
               <Button
                 className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 flex items-center gap-2"
-                onClick={() => (window.location.href = "/catalog")}
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.location.href = "/catalog"
+                  }
+                }}
               >
                 <ShoppingBag className="w-5 h-5" />
                 Comprar Ahora
@@ -51,7 +55,11 @@ export function HeroSection() {
                   <Button
                     size="sm"
                     className="bg-emerald-500 hover:bg-emerald-600 flex items-center gap-2"
-                    onClick={() => (window.location.href = "/catalog?category=safety")}
+                    onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        window.location.href = "/catalog?category=safety"
+                      }
+                    }}
                   >
                     <Heart className="w-4 h-4" />
                     Comprar
@@ -76,7 +84,11 @@ export function HeroSection() {
                   <Button
                     size="sm"
                     className="bg-emerald-500 hover:bg-emerald-600 flex items-center gap-2"
-                    onClick={() => (window.location.href = "/catalog?category=safety")}
+                    onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        window.location.href = "/catalog?category=safety"
+                      }
+                    }}
                   >
                     <ShoppingBag className="w-4 h-4" />
                     Comprar
