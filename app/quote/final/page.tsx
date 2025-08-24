@@ -42,6 +42,8 @@ export default function FinalQuotePage() {
   const [quoteData, setQuoteData] = useState<QuoteData | null>(null)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     const savedQuote = localStorage.getItem("currentQuote")
     if (!savedQuote) {
       router.push("/")

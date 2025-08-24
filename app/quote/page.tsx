@@ -21,7 +21,9 @@ export default function QuotePage() {
 
     const quote = await submitQuote(customerInfo, items, total, notes)
 
-    localStorage.setItem("currentQuote", JSON.stringify(quote))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("currentQuote", JSON.stringify(quote))
+    }
     clearCart()
     router.push("/quote/final")
   }

@@ -64,7 +64,7 @@ export function ProductGrid({
     setLoadingAll(true)
     // Simulate loading time for showing all
     setTimeout(() => {
-      setDisplayedCount(products.length)
+      setDisplayedCount((products || []).length)
       setLoadingAll(false)
     }, 800)
   }
@@ -75,7 +75,7 @@ export function ProductGrid({
       <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
         <div className="flex items-center space-x-4">
           <span className="text-sm text-gray-600">
-            Mostrando 1-{displayedProducts.length} de {products.length} resultados
+            Mostrando 1-{displayedProducts.length} de {(products || []).length} resultados
           </span>
         </div>
 
@@ -200,7 +200,7 @@ export function ProductGrid({
             ) : (
               <>
                 <Grid className="w-4 h-4 mr-2" />
-                Mostrar Todo ({products.length})
+                Mostrar Todo ({(products || []).length})
               </>
             )}
           </Button>
@@ -208,11 +208,11 @@ export function ProductGrid({
       )}
       
       {/* End of products message */}
-      {!hasMore && products.length > PRODUCTS_PER_PAGE && (
+      {!hasMore && (products || []).length > PRODUCTS_PER_PAGE && (
         <div className="text-center py-8">
           <p className="text-gray-500 text-lg">¡Has visto todos los productos disponibles!</p>
           <p className="text-sm text-gray-400 mt-2">
-            Mostrando {products.length} productos en total
+            Mostrando {(products || []).length} productos en total
           </p>
         </div>
       )}

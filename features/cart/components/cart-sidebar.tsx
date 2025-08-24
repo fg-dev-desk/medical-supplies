@@ -20,7 +20,9 @@ export function CartSidebar() {
       quoteNumber: `COT-${Date.now()}`,
     }
 
-    localStorage.setItem("currentQuote", JSON.stringify(quoteData))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("currentQuote", JSON.stringify(quoteData))
+    }
 
     toggleCart()
     router.push("/quote/final")
