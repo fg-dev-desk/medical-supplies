@@ -6,7 +6,7 @@ import { products } from "@/features/catalog/data/products"
 import Link from "next/link"
 
 export function TopRatedSidebar() {
-  const topRatedProducts = products.slice(0, 3)
+  const topRatedProducts = products?.slice(0, 3) || []
 
   return (
     <div className="space-y-6">

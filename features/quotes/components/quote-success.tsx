@@ -34,8 +34,10 @@ export function QuoteSuccess({ quote, onNewQuote, onBackToShop }: QuoteSuccessPr
       validUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString("es-ES"),
     }
 
-    localStorage.setItem("currentQuote", JSON.stringify(quoteData))
-    router.push("/quote/final")
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("currentQuote", JSON.stringify(quoteData))
+      router.push("/quote/final")
+    }
   }
 
   const handleDownloadPDF = () => {

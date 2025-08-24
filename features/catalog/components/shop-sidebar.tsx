@@ -60,10 +60,10 @@ export function ShopSidebar({ filters, onFiltersChange }: ShopSidebarProps) {
   }
 
   const getCategoryCount = (categoryKey: string) => {
-    return products.filter((p) => p.category === categoryKey).length
+    return (products || []).filter((p) => p.category === categoryKey).length
   }
 
-  const topRatedProducts = products
+  const topRatedProducts = (products || [])
     .filter((p) => p.rating && p.rating >= 4.5)
     .sort((a, b) => (b.rating || 0) - (a.rating || 0))
     .slice(0, 3)

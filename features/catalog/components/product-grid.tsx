@@ -39,8 +39,8 @@ export function ProductGrid({
   }, [products])
   
   // Get products to display
-  const displayedProducts = products.slice(0, displayedCount)
-  const hasMore = displayedCount < products.length
+  const displayedProducts = (products || []).slice(0, displayedCount)
+  const hasMore = displayedCount < (products || []).length
 
   const handleCardClick = (productId: string) => {
     router.push(`/product/${productId}`)
