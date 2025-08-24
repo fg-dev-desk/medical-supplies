@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../styles/colors.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Medical Supply Store Color Palette - Light Theme */
+  --background: #ffffff; /* Clean white background */
+  --foreground: #111827; /* Dark text for readability */
+  --card: #ffffff; /* White cards */
+  --card-foreground: #111827; /* Dark card text */
+  --popover: #ffffff; /* White popover */
+  --popover-foreground: #111827; /* Dark popover text */
+  --primary: #059669; /* Medical emerald green */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #f9fafb; /* Light gray secondary */
+  --secondary-foreground: #111827; /* Dark text on secondary */
+  --muted: #f3f4f6; /* Light gray muted */
+  --muted-foreground: #6b7280; /* Medium gray muted text */
+  --accent: #d1fae5; /* Light emerald accent */
+  --accent-foreground: #065f46; /* Dark emerald text on accent */
+  --destructive: #ef4444; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #e5e7eb; /* Light gray border */
+  --input: #ffffff; /* White input background */
+  --ring: #059669; /* Emerald focus ring */
+  --chart-1: #059669; /* Primary emerald */
+  --chart-2: #6b7280; /* Medium gray */
+  --chart-3: #d1fae5; /* Light emerald */
+  --chart-4: #f3f4f6; /* Light gray */
+  --chart-5: #047857; /* Dark emerald */
+  --radius: 0.5rem; /* Medical-appropriate radius */
+  --sidebar: #f9fafb; /* Light gray sidebar */
+  --sidebar-foreground: #111827; /* Dark sidebar text */
+  --sidebar-primary: #059669; /* Emerald sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
+  --sidebar-accent: #d1fae5; /* Light emerald sidebar accent */
+  --sidebar-accent-foreground: #065f46; /* Dark emerald sidebar accent text */
+  --sidebar-border: #e5e7eb; /* Light gray sidebar border */
+  --sidebar-ring: #059669; /* Emerald sidebar ring */
+}
+
+.dark {
+  /* Keep original dark theme for now */
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --card: #0f172a;
+  --card-foreground: #f1f5f9;
+  --popover: #0f172a;
+  --popover-foreground: #f1f5f9;
+  --primary: #10b981; /* Slightly brighter emerald for dark mode */
+  --primary-foreground: #0f172a;
+  --secondary: #1e293b;
+  --secondary-foreground: #f1f5f9;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #f1f5f9;
+  --destructive: #ef4444;
+  --destructive-foreground: #f1f5f9;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #10b981;
+  --chart-1: #10b981;
+  --chart-2: #94a3b8;
+  --chart-3: #34d399;
+  --chart-4: #1e293b;
+  --chart-5: #059669;
+  --sidebar: #0f172a;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: #1e293b;
+  --sidebar-ring: #10b981;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Medical Supply Store Custom Styles */
+.medical-primary {
+  background-color: var(--medical-primary);
+  color: white;
+}
+
+.medical-primary:hover {
+  background-color: var(--medical-primary-hover);
+}
+
+.medical-secondary {
+  background-color: var(--medical-secondary);
+  color: var(--medical-text-primary);
+  border: 1px solid var(--medical-tertiary-light);
+}
+
+.medical-secondary:hover {
+  background-color: var(--medical-secondary-hover);
+}
+
+.medical-tertiary {
+  background-color: var(--medical-tertiary);
+  color: white;
+}
+
+.medical-tertiary:hover {
+  background-color: var(--medical-tertiary-hover);
+}
+
+/* Custom button styles to override shadcn defaults */
+.btn-medical-primary {
+  background-color: var(--medical-primary) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-medical-primary:hover {
+  background-color: var(--medical-primary-hover) !important;
+}

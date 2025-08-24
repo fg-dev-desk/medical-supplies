@@ -1,0 +1,31 @@
+/* Medical Supply Store Color Palette */
+:root {
+  /* Primary Medical Green */
+  --medical-primary: #059669; /* emerald-600 */
+  --medical-primary-hover: #047857; /* emerald-700 */
+  --medical-primary-light: #d1fae5; /* emerald-100 */
+  --medical-primary-muted: #ecfdf5; /* emerald-50 */
+  
+  /* Secondary Clean White */
+  --medical-secondary: #ffffff; /* white */
+  --medical-secondary-hover: #f9fafb; /* gray-50 */
+  --medical-secondary-light: #f3f4f6; /* gray-100 */
+  --medical-secondary-muted: #e5e7eb; /* gray-200 */
+  
+  /* Tertiary Professional Gray */
+  --medical-tertiary: #6b7280; /* gray-500 */
+  --medical-tertiary-hover: #4b5563; /* gray-600 */
+  --medical-tertiary-light: #d1d5db; /* gray-300 */
+  --medical-tertiary-muted: #f9fafb; /* gray-50 */
+  
+  /* Text Colors */
+  --medical-text-primary: #111827; /* gray-900 */
+  --medical-text-secondary: #6b7280; /* gray-500 */
+  --medical-text-light: #9ca3af; /* gray-400 */
+  
+  /* Status Colors */
+  --medical-success: var(--medical-primary);
+  --medical-warning: #f59e0b; /* amber-500 */
+  --medical-error: #ef4444; /* red-500 */
+  --medical-info: #3b82f6; /* blue-500 */
+}
