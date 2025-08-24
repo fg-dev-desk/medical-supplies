@@ -246,7 +246,7 @@ export function ShopSidebar({ filters, onFiltersChange }: ShopSidebarProps) {
         </CardContent>
       </Card> */}
 
-      {/* Promotional Banner */}
+      {/* Promotional Banner
       <Card className="bg-gradient-to-br from-blue-600 to-blue-700 text-white">
         <CardContent className="p-6">
           <div className="text-center">
@@ -257,7 +257,7 @@ export function ShopSidebar({ filters, onFiltersChange }: ShopSidebarProps) {
             </Button>
           </div>
         </CardContent>
-      </Card>
+      </Card> */}
     </div>
   )
 }

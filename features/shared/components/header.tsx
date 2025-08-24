@@ -214,32 +214,31 @@ export function Header() {
 
       <div className="bg-emerald-500">
         <div className="container mx-auto px-4">
-          <div className="flex items-center overflow-x-auto">
+          <div className="flex items-center">
             {/* Categories Dropdown */}
-            <div className="relative flex-shrink-0">
+            <div className="relative">
               <Button
                 variant="ghost"
-                className="bg-emerald-600 text-white hover:bg-emerald-700 rounded-none px-3 sm:px-6 py-3 text-sm sm:text-base"
+                className="bg-emerald-600 text-white hover:bg-emerald-700 hover:text-white rounded-none px-6 py-3"
                 onClick={() => setShowCategories(!showCategories)}
               >
-                <span className="hidden sm:inline">☰ CATEGORÍAS</span>
-                <span className="sm:hidden">☰ CAT</span>
-                <ChevronDown className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4" />
+                ☰ CATEGORÍAS
+                <ChevronDown className="ml-2 w-4 h-4" />
               </Button>
 
               {showCategories && (
-                <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 w-56 sm:w-64 z-50">
+                <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 w-64 z-50">
                   {categories.map((category) => {
                     const IconComponent = category.icon
                     return (
                       <a
                         key={category.value}
                         href={`/catalog?category=${category.value}`}
-                        className="flex items-center px-3 sm:px-4 py-2 sm:py-3 hover:bg-gray-50 border-b border-gray-100"
+                        className="flex items-center px-4 py-3 hover:bg-emerald-50 border-b border-gray-100"
                         onClick={() => setShowCategories(false)}
                       >
-                        <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-emerald-500" />
-                        <span className="text-gray-700 text-sm sm:text-base">{category.name}</span>
+                        <IconComponent className="w-5 h-5 mr-3 text-emerald-500" />
+                        <span className="text-gray-700">{category.name}</span>
                       </a>
                     )
                   })}
@@ -248,17 +247,17 @@ export function Header() {
             </div>
 
             {/* Main Navigation */}
-            <nav className="flex items-center space-x-4 sm:space-x-8 ml-4 sm:ml-8 overflow-x-auto">
-              <a href="/" className="text-white hover:text-emerald-100 py-3 text-sm sm:text-base whitespace-nowrap">
+            <nav className="flex items-center space-x-8 ml-8">
+              <a href="/" className="text-white hover:text-emerald-100 py-3">
                 Inicio
               </a>
-              <a href="/about" className="text-white hover:text-emerald-100 py-3 text-sm sm:text-base whitespace-nowrap">
+              <a href="/about" className="text-white hover:text-emerald-100 py-3">
                 Nosotros
               </a>
-              <a href="/catalog" className="text-white hover:text-emerald-100 py-3 text-sm sm:text-base whitespace-nowrap">
+              <a href="/catalog" className="text-white hover:text-emerald-100 py-3">
                 Productos
               </a>
-              <a href="/contact" className="text-white hover:text-emerald-100 py-3 text-sm sm:text-base whitespace-nowrap">
+              <a href="/contact" className="text-white hover:text-emerald-100 py-3">
                 Contacto
               </a>
             </nav>

@@ -180,7 +180,8 @@ export function ProductGrid({
             ) : (
               <>
                 <Package className="w-4 h-4 mr-2" />
-                Cargar Más (+{PRODUCTS_PER_PAGE})
+                Cargar Más 
+                {/* (+{PRODUCTS_PER_PAGE}) */}
               </>
             )}
           </Button>
